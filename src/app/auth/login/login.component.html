@@ -1,39 +1,88 @@
-<mat-card>
+<div class="login-form">
+  <mat-card>
     <mat-card-header>
-        <mat-card-title>Login Form</mat-card-title>
+      <mat-card-title>Login Form</mat-card-title>
     </mat-card-header>
 
     <mat-card-content [formGroup]="loginForm">
-        <mat-form-field color="accent">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email">
-            <mat-error>
-                Field is required.
-            </mat-error>
-        </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error> Field is required. </mat-error>
+      </mat-form-field>
 
-        <mat-form-field color="accent">
-            <mat-label>Password</mat-label>
-            <input matInput [type]="hidePassword ? 'password' : 'text'"
-                   formControlName="password">
-            <button mat-icon-button matSuffix
-                    (click)="hidePassword = !hidePassword">
-                <mat-icon> {{hidePassword ? "visibility_off" : "visibility_on"}}
-                </mat-icon>
-            </button>
-            <mat-error>
-                Field is required.
-            </mat-error>
-        </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+        >
+          <mat-icon>
+            {{ hidePassword ? "visibility_off" : "visibility_on" }}
+          </mat-icon>
+        </button>
+        <mat-error> Field is required. </mat-error>
+      </mat-form-field>
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-raised-button color="accent"
-                (click)="login()">Login</button>
+      <button mat-raised-button color="accent" (click)="login()">Login</button>
     </mat-card-actions>
 
     <mat-card-actions>
-        <h4>Don't have an account?</h4>
-        <a mat-stroked-button color="accent" routerLink="/register">Register</a>
+      <h4>Don't have an account?</h4>
+      <a mat-stroked-button color="accent" routerLink="/register">Register</a>
     </mat-card-actions>
-</mat-card>
+  </mat-card>
+</div>
+
+<div class="library-info">
+  <h1>Information</h1>
+  <mat-list>
+    <mat-list-item>
+      <p>
+        The provided deployed link may not fully be operational due to following
+        reasons:
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <p>
+        1. The frontend and backend components have been deliberately separated
+        through an API, prioritizing system security and design integrity. This
+        approach shields users from direct exposure to underlying queries and
+        backend code, enhancing overall security.
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <p>
+        2. Cloud Hosting Constraints: Platforms such as Vercel and Netlify,
+        known for their free and secure hosting services, exclusively support
+        frontend hosting. Unfortunately, .NetCore hosting is not currently
+        supported on these platforms. This limitation arises from the hosting
+        platform's capabilities rather than a restriction within the project
+        itself.
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <p>
+        3. Financial Considerations: As of now, there is a constraint on
+        utilizing subscription-based cloud services such as AWS, Azure, or
+        Heroku. These platforms offer robust hosting solutions but involve
+        subscription fees, which are currently outside the project's budget.
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <p>
+        To experience the live functionality of the site, kindly reach out via
+        <a href="mailto:umangbaranwal00@gmail.com">email</a>. I am more than
+        happy to provide a personalized live demo
+      </p>
+    </mat-list-item>
+  </mat-list>
+</div>
